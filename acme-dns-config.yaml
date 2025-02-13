@@ -42,4 +42,4 @@ zone_configs:
     allowfrom: []
 
     # the acme-dns registration URL
-    acme_dns_registration_url: http://auth.my-domain.net/register
+    acme_dns_registration_url: https://auth.acme-dns.io/register

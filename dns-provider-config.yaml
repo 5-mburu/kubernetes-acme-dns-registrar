@@ -24,23 +24,23 @@ dns_providers:
   cloudflare:
 
     # provider is enabled or not?
-    enabled: false
+    enabled: true
 
     # common settings, can be overriden per zone below
-    zone_id: xxx
+    zone_id: 9d518b982eb37d6f1f5d1534e9ff989a
 
     zones:
 
       # zones that we will manage CNAME records in
       my-domain.net:
-        zone_name: my-domain.net
+        zone_name: irembo-test.org
         ttl: 300
 
         # only manage dns CNAMEs for 
         # AcmeDnsRegistationEvent.Registration.cname_name 
         # that matches the following patterns (ANY match)
         includes: 
-          - ".+\\.my-domain\\.net"
+          - ".+\\.irembo-test\\.org"
 
         # ignore/exclude dns CNAMEs management for 
         # AcmeDnsRegistationEvent.Registration.cname_name

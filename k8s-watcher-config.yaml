@@ -14,7 +14,7 @@
 
 k8s_watch_configs:
   - id: all_ingress_my-apps
-    namespace: my-apps
+    namespace: default
     kind: Ingress
     sdk_client_class_name: NetworkingV1Api
     sdk_list_function_name: list_ingress_for_all_namespaces

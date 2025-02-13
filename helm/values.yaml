@@ -60,7 +60,7 @@ ingress:
   # TLS config for the KADR ingress... 
   tls:
     enabled: false
-    secretName: "" # you need to set this!
+    secretName: "super-secret" # you need to set this!
 
   metadata:
     #labels:
@@ -107,26 +107,25 @@ rbac:
 #
 #####################################################
 
-#api:
+api:
   # the jwt secret key that will be used when signing JWT tokens
   # for the API
-  #jwtSecretKey: FILLMEIN!
+  jwtSecretKey: FILLMEIN!
 
   # for the DefaultIdpService configuration
-  #idp:
-    #principalDbConfigYaml: RAW YAML CONTENTS | pass via --set-file x.y=/path/to/file
-
+  idp:
+    principalDbConfigYaml: RAW YAML CONTENTS | pass via --set-file idp-principal-db-config.yaml
 #####################################################
 #
 # Values for the acme-dns registrar behavior
 #
 #####################################################
 
-#acmedns:
+acmedns:
 
   # The contents of the acme-dns-config.yaml config file
   # you can set this inline directly or via a file
-  # configYaml: RAW YAML CONTENTS | pass via --set-file x.y=/path/to/file
+   configYaml: RAW YAML CONTENTS | pass via --set-file acme-dns-config.yaml
 
   #-------------------------------------------------
   # The following 2 values should only be set if you are NOT wanting
@@ -150,7 +149,7 @@ rbac:
 #
 #####################################################
 
-#k8swatcher:
+k8swatcher:
   #-------------------------------------------------
   # The following 2 values should only be set if you are NOT wanting
   # to use the ServiceAccount and RBAC this chart creates
@@ -166,7 +165,7 @@ rbac:
 
   # The contents of the k8s-watcher-config.yaml config file
   # you can set this inline directly or via a file
-  #configYaml:  RAW YAML CONTENTS | pass via --set-file x.y=/path/to/file
+  configYaml:  RAW YAML CONTENTS | pass via --set-file /k8s-watcher-config.yaml
 
 
 #####################################################
@@ -175,14 +174,14 @@ rbac:
 #
 #####################################################
 
-#dnsproviders:
+dnsproviders:
 
   # The contents of the dns-providers-config.yaml config file
   # you can set this inline directly or via a file
-  #configYaml:  RAW YAML CONTENTS | pass via --set-file x.y=/path/to/file
+  configYaml:  RAW YAML CONTENTS | pass via --set-file /acme-dns-config.yaml
 
   # The contents of the dns-providers-secrets.yaml config file
   # you can set this inline directly or via a file
-  #secretsYaml:  RAW YAML CONTENTS | pass via --set-file x.y=/path/to/file
+  secretsYaml:  RAW YAML CONTENTS | pass via --set-file /dns-provider-secrets.yaml
     
 
